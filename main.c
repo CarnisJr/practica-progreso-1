@@ -12,12 +12,14 @@ int main(void){
     //variables para caso 2
     int num, productDigitos, sumDigitos, digitosPares, digitosImpares;
     int aux2, digit;
+    //variables para caso 3
+    int num3, aux3, factorial;
 
     do{
         printf("\t---MENÚ---\t\n");
         printf("1. Impares y primos en un rango\n");
         printf("2. Trabajo con dígitos de un número\n");
-        printf("3. Opción C\n");
+        printf("3. Factorial de un número\n");
         printf("4. Salir\n");
         printf("Ingrese una opción: ");
         scanf("%d", &selector);
@@ -114,6 +116,25 @@ int main(void){
             break;
         case 3:                 //Calcular el factorial de un número
             
+            factorial = 1;
+            
+            printf("\t--FACTORIAL DE UN NÚMERO---\t\n");
+            
+            do{
+                printf("Ingrese un número entero positivo: ");
+                scanf("%d", &num);
+            }while(num < 0);
+
+            aux3 = num;
+            if(num == 0){
+                factorial = 1;
+            }else{
+                while(aux3 > 1 ){
+                    
+                    factorial *= aux3--;
+                }
+            }
+            printf("El factorial de %d es %d\n", num, factorial);
 
             break;
         case 4:
